@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1nfowars</title>
+    <link>https://1nfowars.com/</link>
+    <description>Recent content on 1nfowars</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Aug 2018 12:32:47 -0800</lastBuildDate>
+    
+	<atom:link href="https://1nfowars.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://1nfowars.com/about/</link>
+      <pubDate>Sun, 19 Aug 2018 12:32:47 -0800</pubDate>
+      
+      <guid>https://1nfowars.com/about/</guid>
+      <description>Full Stack web developer‽ General I enjoy working with most parts of a web application but really prefer the backend and database layers. I have a strong preference for using PostgreSQL and I feel it is usually a good place to store calculations and assimilate data. But micro-services&amp;hellip; I think that microservices are a great solution to a very real problem but often times it is premature for your application.</description>
+    </item>
+    
+    <item>
+      <title>Electrode Server and Lab - effin eh!</title>
+      <link>https://1nfowars.com/posts/electrode_server_and_lab/</link>
+      <pubDate>Thu, 16 Aug 2018 14:32:52 -0800</pubDate>
+      
+      <guid>https://1nfowars.com/posts/electrode_server_and_lab/</guid>
+      <description>Walmart labs released Electrode awhile back for universal JavaScript. The project uses &amp;ldquo;best of&amp;rdquo; technologies and presumably helps power a bunch of their stuff. How much? I have no idea as I do not work for Walmart labs. I did apply once but that is a different post&amp;hellip; Anyways, back to electrode-server, this has been my server boilerplate since it was released. Matched with electrode-confippet (node-config) you have a server up and running in one line of code.</description>
+    </item>
+    
+    <item>
+      <title>Fun with falsy (JS is crazy)</title>
+      <link>https://1nfowars.com/posts/fun_with_falsy/</link>
+      <pubDate>Thu, 05 Jul 2018 14:29:37 -0800</pubDate>
+      
+      <guid>https://1nfowars.com/posts/fun_with_falsy/</guid>
+      <description>This little bug came through via a user that was unable to render a chart correctly for a given line. Console gave me:
+TypeError: Cannot read property &amp;#39;call&amp;#39; of null at highcharts-modified-nav-extend.js:7391 at Array.forEach (&amp;lt;anonymous&amp;gt;) at q (highcharts-modified-nav-extend.js:533) at c.R.drawDataLabels (highcharts-modified-nav-extend.js:7378) at c.render (highcharts-modified-nav-extend.js:6258) at c.redraw (highcharts-modified-nav-extend.js:6285) at highcharts-modified-nav-extend.js:4996 at Array.forEach (&amp;lt;anonymous&amp;gt;) at q (highcharts-modified-nav-extend.js:533) at u.Chart.redraw (highcharts-modified-nav-extend.js:4995) The error in question had a line that looked like this:
+i = d.</description>
+    </item>
+    
+    <item>
+      <title>Initial thoughts on TypeScript</title>
+      <link>https://1nfowars.com/posts/initial_thoughts_typescript/</link>
+      <pubDate>Sat, 23 Jun 2018 14:09:43 -0800</pubDate>
+      
+      <guid>https://1nfowars.com/posts/initial_thoughts_typescript/</guid>
+      <description>I am unsure how I feel about TypeScript in general. The promise that it is just js does not resonate well with me. Have a legacy project with amd style js and a lot of custom code? Good luck switching over quickly&amp;hellip; The idea of just renaming to .ts does not work in the real world, at least not for me. I believe it is possible I just do not have the time to dig through.</description>
+    </item>
+    
+    <item>
+      <title>3D Polylines from a table of points</title>
+      <link>https://1nfowars.com/posts/3d_polylines_from_points/</link>
+      <pubDate>Fri, 22 Jun 2018 14:24:18 -0800</pubDate>
+      
+      <guid>https://1nfowars.com/posts/3d_polylines_from_points/</guid>
+      <description>This project came up at work as we needed to take lines, split at vertex, interpolate them using 3D Analyst, and then take all of those points with a new elevation and assemble them back into polylines. First and foremost this process had already been fleshed out by one of our GIS Analysts so we knew it would work. Dealing with 11,000 lines it ended up being 500,000 points after the were split.</description>
+    </item>
+    
+    <item>
+      <title>Use gitk. Thank me later.</title>
+      <link>https://1nfowars.com/posts/use_gitk_okay/</link>
+      <pubDate>Tue, 19 Jun 2018 11:36:44 -0800</pubDate>
+      
+      <guid>https://1nfowars.com/posts/use_gitk_okay/</guid>
+      <description>One of my favorite tools for visualizing what has changed in git is gitk if you are not familiar this little command will open up a new window in the context of the current branch by default. It has a graph overview, a diff window, and a tree of files with changes. I am a visual person so this tool has been invaluable to me when working on a project. There are ways to do this with the command line and something like SourceTree can get you this plus more; however, I like to do 90% in the command line and go to the GUI when I am at a loss or want a simple representation.</description>
+    </item>
+    
+    <item>
+      <title>Hijacking popups in WAB (esri)</title>
+      <link>https://1nfowars.com/posts/hijacking_popups_in_wab/</link>
+      <pubDate>Mon, 11 Jun 2018 14:27:41 -0800</pubDate>
+      
+      <guid>https://1nfowars.com/posts/hijacking_popups_in_wab/</guid>
+      <description>Esri&amp;rsquo;s popups IMO have always been difficult to work with. The latest event was that we needed to control a link so that it had target=&amp;quot;_blank&amp;quot; AND set some window properties. So, we tried using the default map creation but it strips out anything you might want to do. So, the solution that I used was to use a &amp;quot;headless&amp;quot; widget that gets loaded as part of the theme and use that widget to set up a listener onthis.</description>
+    </item>
+    
+    <item>
+      <title>Using ET Geowizards in .Net</title>
+      <link>https://1nfowars.com/posts/using_etgeowizards_net/</link>
+      <pubDate>Sat, 09 Jun 2018 14:09:43 -0800</pubDate>
+      
+      <guid>https://1nfowars.com/posts/using_etgeowizards_net/</guid>
+      <description>The only part that I really want to touch on and mostly for my own reference, is that most of these tools take a feature class as input. The Esri Geoprocessing tools also need a feature class but are more flexible on how it is passed in.
+Works with Esri:
+var tempFileGeodatabase = &amp;#34;C:\\temp\\db.gdb\\points&amp;#34;; var interpolatedPointsLyr = tempFileGeodatabase + &amp;#34;\\InterpolatedPoints_Lyr&amp;#34;; AddGeometryAttributes(interpolatedPointsLyr);  ET Geo Wizards:
+ETGWCore wizard = new ETGWCore(); IWorkspace workspace = FileGdbWorkspaceFromPath(tempFileGeodatabase); IFeatureClass interpolatedPointFc = featureWorkspace.</description>
+    </item>
+    
+  </channel>
+</rss>
