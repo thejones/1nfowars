@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Alex Jones">
+    <meta name="description" content="There is a war on each developers mind!">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="https://1nfowars.com">
+    <title>
+  Electrode Server and Lab - effin eh! · 1nfowars
+</title>
+
+    <link rel="canonical" href="https://1nfowars.com/posts/electrode_server_and_lab/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://1nfowars.com/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://1nfowars.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://1nfowars.com/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.47.1" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://1nfowars.com/">
+      1nfowars
+    </a>
+    <input type="checkbox" id="menu-control"/>
+    <label class="menu-mobile  float-right " for="menu-control">
+      <span class="btn-mobile  float-right ">&#9776;</span>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item   align-left  ">
+              <a class="navigation-link" href="https://1nfowars.com/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item   align-left  ">
+              <a class="navigation-link" href="https://1nfowars.com/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    </label>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">Electrode Server and Lab - effin eh!</h1>
+      <h2 class="date">August 16, 2018</h2>
+
+      
+    </header>
+
+    <p>Walmart labs released Electrode awhile back for universal JavaScript. The project uses &ldquo;best of&rdquo; technologies and presumably helps power a bunch of their stuff. How much? I have no idea as I do not work for Walmart labs. I did apply once but that is a different post&hellip; Anyways, back to electrode-server, this has been my server boilerplate since it was released. Matched with electrode-confippet (node-config) you have a server up and running in one line of code. The server does nothing but it would be running.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">const config = require(&#34;electrode-confippet&#34;).config;
+//Exports a Promise
+module.exports = require(&#34;electrode-server&#34;)(config);</pre></div>
+<p>Electrode-confippet is not a hard requirement but it seems to work really well and lets you use .js or .json for your configuration needs. I like the flexibility so I will stick with it. The rest of the electrode stack integrates nicely with React and if you are into React I would recommend that you go that way. I personally am not on team React so I opted to just use the server. As an aside, you could also use a more traditional Hapi setup and be just fine&hellip;</p>
+
+<p>The real hurdle I needed to overcome was what that line above does and how do I integrate lab into the mix. As far as I can tell electrode went the route of Mocha and friends. For this test I wanted to stick with lab as I am running a traditional(ish) REST api. On to the meat and potatoes of this. The file above exports a Promise so in our test file we need to remember that.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">//test/index.js
+&#39;use strict&#39;
+
+const Code = require(&#39;code&#39;)
+const Hapi = require(&#39;hapi&#39;)
+const Lab = require(&#39;lab&#39;)
+const ElectrodeServer = require(&#34;../&#34;);
+
+// shortcuts
+const lab = exports.lab = Lab.script()
+const describe = lab.describe
+const it = lab.it
+const expect = Code.expect
+
+describe(&#39;electrode loaded echoIt correctly&#39;, () =&gt; {
+  it(&#39;will echo my text&#39;, (done) =&gt; {
+    var electrodeServer = ElectrodeServer
+    electrodeServer.then( server =&gt; {
+    server.inject(&#39;/electrode loaded this&#39;, (res) =&gt; {
+        expect(res.result).to.equal(&#39;electrode loaded this&#39;)
+        done()
+      })
+    server.stop()
+   })
+
+  })
+})</pre></div>
+<p>For this example I loaded a Plugin called echoIt that literally just replies back with the input given. Notice how I call</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">electrodeServer.then(server =&gt; {})</pre></div>
+<p>that gives us the server that we can inject into with lab and use as needed. In order to run this we just need to launch it via <code>npm test</code></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">//package.json
+  &#34;scripts&#34;: {
+    &#34;test&#34;: &#34;lab -c&#34;
+  }</pre></div>
+<p>Assuming you have more than one test you want to run you could spin up the server beforeEach or as needed. gg</p>
+
+  </article>
+
+  <br/>
+
+  
+  
+</section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Thanks for visiting.</p>
+    
+     © 2018    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>. 
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
