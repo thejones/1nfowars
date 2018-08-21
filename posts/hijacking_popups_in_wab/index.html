@@ -72,7 +72,7 @@
       
     </header>
 
-    <p>Esri&rsquo;s popups IMO have always been difficult to work with. The latest event was that we needed to control a link so that it had <code>target=&quot;_blank&quot; AND set some window properties. So, we tried using the default map creation but it strips out anything you might want to do. So, the solution that I used was to use a &quot;headless&quot; widget that gets loaded as part of the theme and use that widget to set up a listener on</code>this.map.infoWindow.domNode`. So, anytime a mouse-over happens I am notified. This seems extreme but also works well. With the event firing I am able to filter out that information I am interested in and reformat the Popup accordingly.</p>
+    <p>Esri&rsquo;s popups IMO have always been difficult to work with. The latest event was that we needed to control a link so that it had <code>target=&quot;_blank&quot; AND set some window properties. So, we tried using the default map creation but it strips out anything you might want to do. So, the solution that I used was to use a &quot;headless&quot; widget that gets loaded as part of the theme and use that widget to set up a listener on</code>this.map.infoWindow.domNode`. So, anytime a mouse-over happens I am notified. This seems extreme but also works well. With the event firing, I am able to filter out that information I am interested in and reformat the Popup accordingly.</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">postCreate: function postCreate() {
   var self = this; // &lt;- Life saver right here.
   this.own(
@@ -101,7 +101,7 @@
     )
   );
 }</pre></div>
-<p>I tired to make this piece stand on its own so you will see some AMD imports and some Global dojo references. I hate AMD with a passion so I use it <strong>WAY</strong> more than I should. Either way. I check if I have <code>data-mylink</code> and if so I end early if not I reformat and change the link text.</p>
+<p>I tried to make this piece stand on its own so you will see some AMD imports and some Global dojo references. I hate AMD with a passion so I use it <strong>WAY</strong> more than I should. Either way. I check if I have <code>data-mylink</code> and if so I end early if not I reformat and change the link text.</p>
 
   </article>
 

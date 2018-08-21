@@ -86,18 +86,18 @@
     at u.Chart.redraw (highcharts-modified-nav-extend.js:4995)</pre></div>
 <p>The error in question had a line that looked like this:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">i = d.format ? Na(d.format, q) : d.formatter.call(q, d);</pre></div>
-<p>Alright&hellip; Well d is defined and ready for action but lets check the object properties. Specifically d.format.</p>
+<p>Alright&hellip; Well, d is defined and ready for action but let&rsquo;s check the object properties. Specifically d.format.</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">//Chrome console output
 d.format
 &#34;&#34;</pre></div>
-<p>Highcharts is checking if there is a format property and if so do something and if not do something else. In my case it was trying to do something else. This makes sense as JavaScript evaluates 0 length strings as false. Two options at this point, provide a formatter function that returns false or determine what this code is actually trying to do.</p>
+<p>Highcharts is checking if there is a format property and if so do something and if not do something else. In my case, it was trying to do something else. This makes sense as JavaScript evaluates 0 length strings as false. Two options at this point, provide a format function that returns false or determines what this code is actually trying to do.</p>
 
 <p>After looking into it the data comes from a C# web service and pre-populates all of these values. Not real easy to pass along a JavaScript function in a JSON web-service call, however, looking at the web-service I have this line.</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">string format = data.ReferenceName != null ? data.ReferenceName : &#34;&#34;;</pre></div>
 <p>It appears that we simply want an empty string for rendering purposes. Not a false string, just an empty string.
 Solution:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">string format = data.ReferenceName != null ? data.ReferenceName : &#34;  &#34;; //String that is empty and truthy</pre></div>
-<p>For my needs this worked. No client side code changes and fixed in a matter of minutes.</p>
+<p>For my needs, this worked. No client-side code changes and fixed in a matter of minutes.</p>
 
   </article>
 

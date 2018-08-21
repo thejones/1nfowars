@@ -26,7 +26,7 @@
       <pubDate>Thu, 16 Aug 2018 14:32:52 -0800</pubDate>
       
       <guid>https://1nfowars.com/posts/electrode_server_and_lab/</guid>
-      <description>Walmart labs released Electrode awhile back for universal JavaScript. The project uses &amp;ldquo;best of&amp;rdquo; technologies and presumably helps power a bunch of their stuff. How much? I have no idea as I do not work for Walmart labs. I did apply once but that is a different post&amp;hellip; Anyways, back to electrode-server, this has been my server boilerplate since it was released. Matched with electrode-confippet (node-config) you have a server up and running in one line of code.</description>
+      <description>Walmart labs released Electrode awhile back for universal JavaScript. The project uses &amp;ldquo;best of&amp;rdquo; technologies and presumably helps power a bunch of their stuff. How much? I have no idea as I do not work for Walmart Labs. I did apply once but that is a different post&amp;hellip; Anyways, back to electrode-server, this has been my server boilerplate since it was released. Matched with electrode-confippet (node-config) you have a server up and running in one line of code.</description>
     </item>
     
     <item>
@@ -55,7 +55,7 @@ i = d.</description>
       <pubDate>Fri, 22 Jun 2018 14:24:18 -0800</pubDate>
       
       <guid>https://1nfowars.com/posts/3d_polylines_from_points/</guid>
-      <description>This project came up at work as we needed to take lines, split at vertex, interpolate them using 3D Analyst, and then take all of those points with a new elevation and assemble them back into polylines. First and foremost this process had already been fleshed out by one of our GIS Analysts so we knew it would work. Dealing with 11,000 lines it ended up being 500,000 points after the were split.</description>
+      <description>This project came up at work as we needed to take lines, split at a vertex, interpolate them using 3D Analyst, and then take all of those points with a new elevation and assemble them back into polylines. First and foremost this process had already been fleshed out by one of our GIS Analysts so we knew it would work. Dealing with 11,000 lines it ended up being 500,000 points after they were split.</description>
     </item>
     
     <item>
